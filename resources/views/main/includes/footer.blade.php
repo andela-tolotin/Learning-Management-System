@@ -40,6 +40,8 @@
     <script src="{{ URL::asset('js/jquery-1.12.3.min.js') }}"></script>
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
     <script src="{{ URL::asset('js/scripts.js') }}"></script>
+    <script src="{{ URL::asset('js/jquery.als-1.7.min.js') }} "></script>
+    <script src="{{ URL::asset('js/video_category.js') }}"></script>
     <script src="{{ URL::asset('js/materialize.min.js') }}"></script>
   </body>
 </html>
