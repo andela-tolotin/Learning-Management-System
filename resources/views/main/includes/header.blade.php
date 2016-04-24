@@ -12,4 +12,4 @@
     <link rel="stylesheet" href="{{ URL::asset('css/styles.css') }}" />
     <link rel="stylesheet" href="{{ URL::asset('css/als_demo.css') }}" />
   </head>
-   <body>
+  <body>

@@ -1,10 +1,8 @@
-</head>
-<body>
+@include('main.includes.header')
+@include('main.includes.nav_bar')
 <div class="container">
     <div class="content">
         @yield('content')
     </div>
-    @yield('footer')
 </div>
-</body>
-</html>
+@include('main.includes.footer')
