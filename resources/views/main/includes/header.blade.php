@@ -10,6 +10,6 @@
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
     <link href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="{{ URL::asset('css/styles.css') }}" />
-    <link rel="stylesheet" href="{{ URL::asset('css/video_category.css') }}" />
+    <link rel="stylesheet" href="{{ URL::asset('css/als_demo.css') }}" />
   </head>
    <body>

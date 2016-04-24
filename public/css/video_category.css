@@ -39,6 +39,7 @@
 
 #demo3 {
     margin: 40px auto;
+    border:1px solid red;
 }
 
 #demo3 .als-item {
@@ -56,8 +57,8 @@
     vertical-align: middle;
     border: 1px solid #777;
     padding: 40%;
-    height: 200px;
-    width: 200px;
+    height: 180px;
+    width: 180px;
     text-align: center;
 }
 
