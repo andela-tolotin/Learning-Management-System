@@ -6,3 +6,4 @@
     </div>
 </div>
 @include('main.includes.footer')
+
