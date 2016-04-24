@@ -16,7 +16,7 @@ Route::get('/', function () {
 });
 
 Route::get('/welcome', function () {
-    return view('main.pages.video_category');
+    return view('main.pages.single_video');
 });
 
 
