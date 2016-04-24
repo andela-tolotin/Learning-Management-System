@@ -1,6 +1,6 @@
 $("#lista1").als({
-    visible_items: 4,
-    scrolling_items: 3,
+    visible_items: 3,
+    scrolling_items: 2,
     orientation: "horizontal",
     circular: "yes",
     autoscroll: "no",

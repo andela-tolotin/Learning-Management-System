@@ -1,4 +1,10 @@
 @include('main.includes.header')
+<style type="text/css">
+body,html {
+  background-image: none !important;
+}
+
+</style>
 @include('main.includes.nav_bar')
 <div class="container">
     <div class="content">
