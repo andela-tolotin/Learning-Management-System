@@ -1,5 +1,5 @@
 
-<div class="container v-center">
+<div class="container v-center bounceInDown animated">
        <div class="row">
          <div class="col-lg-3">
             <div class="cuadro_intro_hover " style="background-color:#cccccc;">

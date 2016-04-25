@@ -51,6 +51,30 @@
       <div class="row">
     <div class="col-lg-4">
         <h3> Related Videos </h3>
+        <div class="list_videos">
+          <div class="video_thumbnail">
+             <a class="pull-left" href="#">
+                <img class="media-object img-circle " src="{{ URL::to('/') }}/images/user.jpg">
+             </a>
+          </div>
+          <div class="video_info">
+             <h4>PHP Iterators</h4>
+             <span>Category</span><br>
+             <span>12,000 views</span>
+          </div>
+        </div>
+        <div class="list_videos">
+           <div class="video_thumbnail">
+             <a class="pull-left" href="#">
+                <img class="media-object img-circle " src="{{ URL::to('/') }}/images/user.jpg">
+             </a>
+           </div>
+           <div class="video_info">
+             <h4>PHP Iterators</h4>
+             <span>Category</span><br>
+             <span>12,000 views</span>
+          </div>
+        </div>
     </div>
       </div>
   </div>

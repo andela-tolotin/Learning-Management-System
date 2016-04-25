@@ -247,6 +247,26 @@ footer .nav>li>a {
 }
 
 footer .nav>li>a:hover {
-    background-color:transparent;
+  background-color:transparent;
   color:#fff;
+}
+
+.list_videos {
+  border-bottom:1px solid #ccc;
+  width: 100%;
+  background: #fffff;
+  padding: 2%;
+  clear: both;
+}
+
+.list_videos .video_thumbnail {
+  width: 30%;
+  float: left;
+  min-height: 100px;
+  margin-right:4%; 
+}
+
+.list_videos .video_info {
+  width: auto;
+  min-height: 100px;
 }
