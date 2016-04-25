@@ -7,15 +7,12 @@
              <h3> What Generators in PHP really are </h3>
             <div class="video_details">
                <ul class="list-inline">
-                  <li><i class="fa fa-eye"></i></li>
-                  <li><i class="fa fa-comment"></i></li>
-                  <li><i class="fa fa-thumbs-up"></i></li>
+                  <li><i class="fa fa-eye"> 2 </i></li>
+                  <li><i class="fa fa-comment"> 5</i></li>
+                  <li><i class="fa fa-thumbs-up"> 3 </i></li>
                </ul>
             </div>
-      </div>
-      <div class="row">
-      <div class="col-lg-8">
-        <div class="panel panel-primary">
+            <div class="panel panel-primary">
             <div class="panel-heading">
                 RECENT COMMENT HISTORY
             </div>
@@ -25,7 +22,7 @@
                       <div class="media-body">
                          <div class="media">
                             <a class="pull-left" href="#">
-                                <img class="media-object img-circle " src="assets/img/user.png">
+                                <img class="media-object img-circle " src="{{ URL::to('/') }}/images/user.jpg">
                             </a>
                             <div class="media-body">
                             Donec sit amet ligula enim. Duis vel condimentum massa.
@@ -50,6 +47,10 @@
              </div>
           </div>
         </div>
+      </div>
+      <div class="row">
+    <div class="col-lg-4">
+        <h3> Related Videos </h3>
     </div>
       </div>
   </div>
