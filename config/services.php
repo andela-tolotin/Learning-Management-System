@@ -36,9 +36,9 @@ return [
     ],
 
     'github' => [
-    'client_id' => 'your-github-app-id',
-    'client_secret' => 'your-github-app-secret',
-    'redirect' => 'http://your-callback-url',
+    'client_id' => evn('CLIENT_ID'),
+    'client_secret' => env('CLIENT_SECRET'),
+    'redirect' => env('CALLBACK_URL'),
     ],
 
 ];

@@ -19,19 +19,36 @@
                 <h6 class="text-center">COMPLETE THESE FIELDS TO SIGN UP</h6>
                 <form class="col-md-10 col-md-offset-1 col-xs-12 col-xs-offset-0">
                 <div class="form-group">
-                        <input type="text" class="form-control input-lg" placeholder="Username">
+                        <input type="text" class="form-control input-lg" placeholder="Username" name="name">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control input-lg" placeholder="Email">
+                        <input type="text" class="form-control input-lg" placeholder="Email" name="email">
                     </div>
                     <div class="form-group">
-                        <input type="password" class="form-control input-lg" placeholder="Password">
+                        <input type="password" class="form-control input-lg" placeholder="Password" name="password">
                     </div>
                     <div class="form-group">
                         <button class="btn btn-danger btn-lg btn-block">Sign up</button>
                         <span class="pull-right"><a href="/login">Log In</a></span>
                     </div>
                 </form>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-md-4">
+                    <a href="{{ url('/auth/facebook') }}" class="btn btn-md btn-primary btn-block btn-social btn-facebook">
+                        <i class="fa fa-facebook"></i> Facebook
+                    </a>
+                </div>
+                <div class="col-xs-12 col-md-4">
+                    <a href="{{ url('/auth/twitter') }}" class="btn btn-md btn-block btn-social btn-twitter">
+                        <i class="fa fa-twitter"></i> Twitter
+                    </a>
+                </div>
+                <div class="col-xs-12 col-md-4">
+                  <a href="{{ url('/auth/github') }}" class="btn btn-md btn-block btn-social btn-github">
+                        <i class="fa fa-github"></i> Github
+                  </a>
+                </div>
             </div>
             <div class="modal-footer">
                 <h6 class="text-center"><a href="">Privacy is important to us. Click here to read why.</a></h6>
