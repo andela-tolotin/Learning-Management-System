@@ -1,4 +1,4 @@
-<footer id="footer">
+<footer id="footer" class="footer">
     <div class="container">
         <p class="text-left">©2016 Made with <i class="fa fa-heart-o fa-lg"></i> by <a href="https://github.com/andela-tolotin/" target="_blank"> Temitope Olotin </a></p>
     </div>

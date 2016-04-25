@@ -1,6 +1,6 @@
 <div class="container v-center">
    <div class="row">
-      <div class="col-lg-8">
+      <div class="col-lg-8 bg-white video_frame">
             <div class="video_wrapper">
                <iframe width="100%" height="500" src="https://www.youtube.com/embed/y_qxZnC7FdA" frameborder="0" allowfullscreen></iframe>
             </div>
@@ -13,9 +13,7 @@
                </ul>
             </div>
             <div class="panel panel-primary">
-            <div class="panel-heading">
-                RECENT COMMENT HISTORY
-            </div>
+               <div class="panel-heading">RECENT COMMENT HISTORY</div>
             <div class="panel-body">
                <ul class="media-list">
                   <li class="media">
@@ -48,10 +46,10 @@
           </div>
         </div>
       </div>
-      <div class="row">
-    <div class="col-lg-4">
+    <div class="col-lg-4 ">
+       <div class="related_videos_wrapper bg-white">
         <h3> Related Videos </h3>
-        <div class="list_videos">
+        <div class="list_videos ">
           <div class="video_thumbnail">
              <a class="pull-left" href="#">
                 <img class="media-object img-circle " src="{{ URL::to('/') }}/images/user.jpg">
@@ -75,7 +73,7 @@
              <span>12,000 views</span>
           </div>
         </div>
-    </div>
       </div>
+    </div>
   </div>
 </div>

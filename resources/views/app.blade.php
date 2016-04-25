@@ -2,6 +2,7 @@
 <style type="text/css">
 body,html {
   background-image: none !important;
+  background: #ccc;
 }
 
 </style>
