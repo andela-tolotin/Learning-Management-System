@@ -17,15 +17,16 @@
             </div>
             <div class="modal-body row">
                 <h6 class="text-center">COMPLETE THESE FIELDS TO SIGN UP</h6>
-                <form class="col-md-10 col-md-offset-1 col-xs-12 col-xs-offset-0">
+                <form class="col-md-10 col-md-offset-1 col-xs-12 col-xs-offset-0" method="POST" action="{{ url('/register') }}">
+                  {!! csrf_field() !!}
                 <div class="form-group">
-                        <input type="text" class="form-control input-lg" placeholder="Username" name="name">
+                    <input type="text" class="form-control input-lg" placeholder="Username" name="name" value="">
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control input-lg" placeholder="Email" name="email">
+                        <input type="text" class="form-control input-lg" placeholder="Email" name="email" value="">
                     </div>
                     <div class="form-group">
-                        <input type="password" class="form-control input-lg" placeholder="Password" name="password">
+                        <input type="password" class="form-control input-lg" placeholder="Password" name="password"value="">
                     </div>
                     <div class="form-group">
                         <button class="btn btn-danger btn-lg btn-block">Sign up</button>

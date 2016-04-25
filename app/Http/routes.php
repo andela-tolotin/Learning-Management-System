@@ -19,9 +19,6 @@ Route::get('/welcome', function () {
     return view('main.pages.single_video');
 });
 
-Route::get('auth/github', 'Auth\AuthController@redirectToProvider');
-Route::get('auth/github/callback', 'Auth\AuthController@handleProviderCallback');
-
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -34,5 +31,6 @@ Route::get('auth/github/callback', 'Auth\AuthController@handleProviderCallback')
 */
 
 Route::group(['middleware' => ['web']], function () {
-    //
+    Route::get('auth/github', 'Auth\AuthController@redirectToProvider');
+    Route::get('auth/github/callback', 'Auth\AuthController@handleProviderCallback');
 });
