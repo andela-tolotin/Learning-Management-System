@@ -19,6 +19,10 @@ Route::get('/welcome', function () {
     return view('main.pages.single_video');
 });
 
+Route::get('/login', function () {
+    return view('main.pages.auth.userlogin_form');
+});
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
