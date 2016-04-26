@@ -1,10 +1,10 @@
 $("#lista1").als({
-    visible_items: 3,
-    scrolling_items: 3,
+    visible_items: 4,
+    scrolling_items: 4,
     orientation: "horizontal",
     circular: "yes",
     autoscroll: "yes",
-    interval: 5000,
+    interval: 3000,
     speed: 300,
     easing: "linear",
     direction: "right",
