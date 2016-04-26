@@ -3,10 +3,10 @@ $("#lista1").als({
     scrolling_items: 3,
     orientation: "horizontal",
     circular: "yes",
-    autoscroll: "no",
+    autoscroll: "yes",
     interval: 5000,
     speed: 300,
     easing: "linear",
-    direction: "left",
+    direction: "right",
     start_from: 0
 });
