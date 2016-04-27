@@ -23,6 +23,11 @@ Route::get('/login', function () {
     return view('main.pages.auth.userlogin_form');
 });
 
+
+Route::get('/dashboard', function () {
+    return view('dashboard.index');
+});
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes

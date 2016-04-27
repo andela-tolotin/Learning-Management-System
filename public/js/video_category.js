@@ -5,7 +5,7 @@ $("#lista1").als({
     circular: "yes",
     autoscroll: "yes",
     interval: 3000,
-    speed: 300,
+    speed: 800,
     easing: "linear",
     direction: "right",
     start_from: 0
