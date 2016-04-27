@@ -16,9 +16,17 @@ Route::get('/', function () {
 });
 
 Route::get('/welcome', function () {
-    return view('welcome');
+    return view('main.pages.single_video');
 });
 
+Route::get('/login', function () {
+    return view('main.pages.auth.userlogin_form');
+});
+
+
+Route::get('/dashboard', function () {
+    return view('dashboard.index');
+});
 
 /*
 |--------------------------------------------------------------------------
@@ -32,5 +40,6 @@ Route::get('/welcome', function () {
 */
 
 Route::group(['middleware' => ['web']], function () {
-    //
+    Route::get('auth/github', 'Auth\AuthController@redirectToProvider');
+    Route::get('auth/github/callback', 'Auth\AuthController@handleProviderCallback');
 });

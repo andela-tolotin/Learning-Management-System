@@ -4,8 +4,8 @@ $("#lista1").als({
     orientation: "horizontal",
     circular: "yes",
     autoscroll: "yes",
-    interval: 5000,
-    speed: 500,
+    interval: 3000,
+    speed: 800,
     easing: "linear",
     direction: "right",
     start_from: 0

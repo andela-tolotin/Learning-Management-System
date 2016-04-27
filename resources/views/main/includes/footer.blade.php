@@ -1,4 +1,4 @@
-<footer id="footer">
+<footer id="footer" class="footer">
     <div class="container">
         <p class="text-left">©2016 Made with <i class="fa fa-heart-o fa-lg"></i> by <a href="https://github.com/andela-tolotin/" target="_blank"> Temitope Olotin </a></p>
     </div>
@@ -13,22 +13,43 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                <h2 class="text-center"><img src="//placehold.it/110" class="img-circle"><br>Login</h2>
+                <h2 class="text-center">SIGN UP</h2>
             </div>
             <div class="modal-body row">
                 <h6 class="text-center">COMPLETE THESE FIELDS TO SIGN UP</h6>
-                <form class="col-md-10 col-md-offset-1 col-xs-12 col-xs-offset-0">
-                    <div class="form-group">
-                        <input type="text" class="form-control input-lg" placeholder="Email">
+                <form class="col-md-10 col-md-offset-1 col-xs-12 col-xs-offset-0" method="POST" action="{{ url('/register') }}">
+                  {!! csrf_field() !!}
+                <div class="form-group">
+                    <input type="text" class="form-control input-lg" placeholder="Username" name="name" value="">
                     </div>
                     <div class="form-group">
-                        <input type="password" class="form-control input-lg" placeholder="Password">
+                        <input type="text" class="form-control input-lg" placeholder="Email" name="email" value="">
                     </div>
                     <div class="form-group">
-                        <button class="btn btn-danger btn-lg btn-block">Sign In</button>
-                        <span class="pull-right"><a href="signup">Register</a></span><span><a href="#">Need help?</a></span>
+                        <input type="password" class="form-control input-lg" placeholder="Password" name="password"value="">
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-danger btn-lg btn-block">Sign up</button>
+                        <span class="pull-right"><a href="/login">Log In</a></span>
                     </div>
                 </form>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-md-4">
+                    <a href="{{ url('/auth/facebook') }}" class="btn btn-md btn-primary btn-block btn-social btn-facebook">
+                        <i class="fa fa-facebook"></i> Facebook
+                    </a>
+                </div>
+                <div class="col-xs-12 col-md-4">
+                    <a href="{{ url('/auth/twitter') }}" class="btn btn-md btn-block btn-social btn-twitter">
+                        <i class="fa fa-twitter"></i> Twitter
+                    </a>
+                </div>
+                <div class="col-xs-12 col-md-4">
+                  <a href="{{ url('/auth/github') }}" class="btn btn-md btn-block btn-social btn-github">
+                        <i class="fa fa-github"></i> Github
+                  </a>
+                </div>
             </div>
             <div class="modal-footer">
                 <h6 class="text-center"><a href="">Privacy is important to us. Click here to read why.</a></h6>
