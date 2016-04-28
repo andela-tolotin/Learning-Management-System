@@ -1,6 +1,6 @@
 <div class="card-panel hoverable">
  <div class="row">
- <table class="bordered">
+ <table class="bordered responsive-table">
         <thead>
           <tr>
               <th data-field="id">Name</th>
