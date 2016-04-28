@@ -23,12 +23,12 @@ Route::get('/login', function () {
     return view('main.pages.auth.userlogin_form');
 });
 
-Route::group(['prefix' => '/dashboard'], function () {
+Route::group(['prefix' => '/dashboard','middleware' => ['web']], function () {
     Route::get('/', function () {
         return view('dashboard.index');
     });
 
-    Route::get('/add-category', function () {
+    Route::get('/category/add', function () {
         return view('dashboard.pages.video_category');
     });
 
@@ -47,6 +47,12 @@ Route::group(['prefix' => '/dashboard'], function () {
     Route::get('/profile', function () {
         return view('dashboard.pages.view_myprofile');
     });
+
+    Route::post('/category/create', [
+        'uses' => 'CategoryController@store', 
+
+    ]);
+
 });
 
 
