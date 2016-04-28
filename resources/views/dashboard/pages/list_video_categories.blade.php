@@ -4,6 +4,6 @@
 
 @section('content')
 
-@include('dashboard.includes.list_all_videos')
+@include('dashboard.includes.list_video_categories')
 
 @endsection

@@ -19,7 +19,7 @@
               <div class="collapsible-body">
                 <ul>
                   <li><a href="/dashboard/add-category">Add Category</a></li>
-                  <li><a href="/dashboard/view-category">View Category</a></li>
+                  <li><a href="/dashboard/view-categories">View Category</a></li>
                 </ul>
               </div>
             </li>
@@ -28,7 +28,7 @@
               <div class="collapsible-body">
                 <ul>
                   <li><a href="/dashboard/add-video">Add video </a></li>
-                  <li><a href="/dashboard/view-video">View Videos</a></li>
+                  <li><a href="/dashboard/view-videos">View Videos</a></li>
                 </ul>
               </div>
             </li>
