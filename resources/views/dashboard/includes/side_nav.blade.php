@@ -18,7 +18,7 @@
         <li class="bold"><a class="collapsible-header  waves-effect waves-teal">Video Category <i class="material-icons">video_library</i></a>
           <div class="collapsible-body">
             <ul>
-              <li><a href="/dashboard/add-category">Add Category</a></li>
+              <li><a href="/dashboard/category/add">Add Category</a></li>
               <li><a href="/dashboard/view-categories">View Category</a></li>
             </ul>
           </div>
