@@ -23,10 +23,16 @@ Route::get('/login', function () {
     return view('main.pages.auth.userlogin_form');
 });
 
+Route::group(['prefix' => '/dashboard'], function () {
+    Route::get('/', function () {
+        return view('dashboard.index');
+    });
 
-Route::get('/dashboard', function () {
-    return view('dashboard.index');
+    Route::get('/add-category', function () {
+        return view('dashboard.pages.video_category');
+    });
 });
+
 
 /*
 |--------------------------------------------------------------------------
