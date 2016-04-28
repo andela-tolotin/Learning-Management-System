@@ -26,6 +26,6 @@ class AddForeignKeyToVideosTable extends Migration
      */
     public function down()
     {
-        Schema::drop('videos');
+        
     }
 }
