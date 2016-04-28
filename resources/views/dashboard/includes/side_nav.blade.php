@@ -12,7 +12,7 @@
             <div class="search-results"></div>
           </div>
         </li>
-        <li class="bold"><a href="about.html" class="waves-effect waves-teal"><i class="material-icons"></i> Home</a></li>
+        <li class="bold"><a href="/dashboard" class="waves-effect waves-teal"><i class="material-icons"></i> Home</a></li>
         <li class="no-padding">
           <ul class="collapsible collapsible-accordion">
             <li class="bold"><a class="collapsible-header  waves-effect waves-teal">Video Category <i class="material-icons">video_library</i></a>
