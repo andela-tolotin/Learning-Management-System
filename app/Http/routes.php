@@ -32,12 +32,16 @@ Route::group(['prefix' => '/dashboard'], function () {
         return view('dashboard.pages.video_category');
     });
 
-    Route::get('/view-category', function () {
+    Route::get('/view-categories', function () {
         return view('dashboard.pages.list_video_categories');
     });
 
     Route::get('/add-video', function () {
         return view('dashboard.pages.add_video');
+    });
+
+    Route::get('/view-videos', function () {
+        return view('dashboard.pages.list_all_videos');
     });
 });
 
