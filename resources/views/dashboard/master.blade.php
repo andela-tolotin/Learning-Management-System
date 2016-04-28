@@ -1,7 +1,15 @@
-@include('dashboard.includes.links_and_metadata')
-<div class="container">
-    <div class="content">
-    @include('dashboard.includes.nav_bar')
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ @include('dashboard.includes.links_and_metadata')
+ <title>@yield('title')</title>
+</head>
+<body>
+    @include('dashboard.includes.side_nav')
+    <main>
+        @include('dashboard.includes.top_nav')
         @yield('content')
-    </div>
-</div>
+    </main>
+    @include('dashboard.includes.footer')
+</body>
+</html>
