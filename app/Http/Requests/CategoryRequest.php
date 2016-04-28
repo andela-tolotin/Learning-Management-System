@@ -24,7 +24,7 @@ class CategoryRequest extends Request
     public function rules()
     {
         return [
-            'name'         => 'required|max:20',
+            'name'         => 'required|unique:categories|max:20',
             'description'  => 'required|max:160',
         ];
     }
