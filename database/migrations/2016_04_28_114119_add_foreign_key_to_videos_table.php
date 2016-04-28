@@ -13,6 +13,7 @@ class AddForeignKeyToVideosTable extends Migration
     public function up()
     {
         Schema::table('videos', function (Blueprint $table) {
+            $table->softDeletes();
             $table->integer('category_id')->unsigned();
             $table->foreign('category_id')->references('id')->on('videos');
         });
@@ -25,6 +26,6 @@ class AddForeignKeyToVideosTable extends Migration
      */
     public function down()
     {
-        Schema::drop('videos');
+        
     }
 }

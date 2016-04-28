@@ -12,8 +12,8 @@ class CreateCommentsTable extends Migration
      */
     public function up()
     {
-        Schema::table('commments', function (Blueprint $table) {
-            $table->increments('id');
+        Schema::create('comments', function (Blueprint $table) {
+            $table->increments('id')->unsigned();
             $table->text('comment');
             $table->timestamps();
         });
@@ -26,6 +26,6 @@ class CreateCommentsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('commments');
+        Schema::drop('comments');
     }
 }
