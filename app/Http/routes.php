@@ -43,6 +43,10 @@ Route::group(['prefix' => '/dashboard'], function () {
     Route::get('/view-videos', function () {
         return view('dashboard.pages.list_all_videos');
     });
+
+    Route::get('/profile', function () {
+        return view('dashboard.pages.view_myprofile');
+    });
 });
 
 
