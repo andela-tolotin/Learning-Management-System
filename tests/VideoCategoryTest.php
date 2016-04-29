@@ -70,6 +70,47 @@ class VideoCategoryTest extends TestCase
              ->press('Create')
              ->see('The name field is required.')
              ->see('The description field is required.');
-
     }
+
+    public function testThatVideoCategoryWasUpdated()
+    {
+       $category = factory('App\Category')->create();
+
+       $this->visit('/dashboard/category/edit/'.$category->id)
+          ->type('Javascript 2.0', 'name')
+          ->type('It is the language of the Html', 'description')
+          ->press('Update')
+          ->seePageIs('/dashboard/category/view')
+          ->see('Javascript 2.0');
+    }
+
+    public function testThatASingleCategoryWasRetrived()
+    {
+         $category = factory('App\Category')->create();
+
+         $this->visit('/dashboard/category/edit/'.$category->id)
+         ->see($category->name);
+    }
+
+    public function testgetAllCategories()
+    {
+        $categories = factory('App\Category', 5)->create();
+
+        $this->visit('/dashboard/category/view')
+        ->see($categories->first()->name);
+        $this->assertArrayHasKey('id', $categories->first()->toArray());
+        $this->assertArrayHasKey('name', $categories->first()->toArray());
+        $this->assertArrayHasKey('description', $categories->first()->toArray());
+        $this->assertArrayHasKey('user_id', $categories->first()->toArray());
+    }
+
+    public function testchangeCategoryStatus()
+    {
+       $category = factory('App\Category')->create();
+
+       $this->visit('/dashboard/category/delete/1')
+       ->see('Operation Successfully');
+        
+    }
+
 }
