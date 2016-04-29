@@ -16,6 +16,16 @@ header, main, footer {
     color:white;
 }
 
+.tabs li .active {
+    border-bottom: 3px solid #00b0ff;
+    width: 100%;
+    color: grey;
+}
+
+.tabs li a {
+     color: grey;
+}
+
 @media only screen and (max-width : 992px) {
   header, main, footer {
     padding-left: 0;

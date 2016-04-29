@@ -32,9 +32,9 @@ Route::group(['prefix' => '/dashboard','middleware' => ['web']], function () {
         return view('dashboard.pages.video_category');
     });
 
-    Route::get('/view-categories', function () {
-        return view('dashboard.pages.list_video_categories');
-    });
+    Route::get('/category/view',  [
+        'uses' => 'CategoryController@viewAllCategories', 
+    ]);
 
     Route::get('/add-video', function () {
         return view('dashboard.pages.add_video');
@@ -51,6 +51,18 @@ Route::group(['prefix' => '/dashboard','middleware' => ['web']], function () {
     Route::post('/category/create', [
         'uses' => 'CategoryController@store', 
 
+    ]);
+
+    Route::get('/category/edit/{id}',  [
+        'uses' => 'CategoryController@getCategory', 
+    ]);
+
+    Route::post('/category/update/{id}',  [
+        'uses' => 'CategoryController@updateCategory', 
+    ]);
+
+    Route::get('/category/delete/{id}',  [
+        'uses' => 'CategoryController@changeCategoryStatus', 
     ]);
 
 });

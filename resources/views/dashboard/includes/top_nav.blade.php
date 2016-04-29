@@ -1,4 +1,4 @@
-<nav class="blue darken-1">
+<nav class="light-blue darken-1">
   <!-- === NavBar Fixed Right Side === -->
   <ul class="right">
     <li>

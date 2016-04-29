@@ -13,17 +13,18 @@
 
 $factory->define(App\User::class, function (Faker\Generator $faker) {
     return [
-        'name' => $faker->name,
-        'email' => $faker->email,
-        'password' => bcrypt(str_random(10)),
+        'name'           => $faker->name,
+        'email'          => $faker->email,
+        'password'       => bcrypt(str_random(10)),
         'remember_token' => str_random(10),
     ];
 });
 
 $factory->define(App\Category::class, function (Faker\Generator $faker) {
     return [
-        'name' => $faker->name,
+        'name'        => $faker->name,
         'description' => $faker->text,
+        'user_id'     => 1,
     ];
 });
 
