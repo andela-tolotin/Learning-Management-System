@@ -1,31 +1,69 @@
 <div class="card-panel hoverable">
  <div class="row">
- <table class="bordered responsive-table">
-        <thead>
-          <tr>
-              <th data-field="id">Name</th>
-              <th data-field="name">Item Name</th>
-              <th data-field="price">Item Price</th>
-          </tr>
-        </thead>
-
-        <tbody>
-          <tr>
-            <td>Alvin</td>
-            <td>Eclair</td>
-            <td>$0.87</td>
-          </tr>
-          <tr>
-            <td>Alan</td>
-            <td>Jellybean</td>
-            <td>$3.76</td>
-          </tr>
-          <tr>
-            <td>Jonathan</td>
-            <td>Lollipop</td>
-            <td>$7.00</td>
-          </tr>
-        </tbody>
-      </table>
+  <div class="col s12">
+    <ul class="tabs">
+      <li class="tabs col s3"><a class="active" href="#active_categories">Active Categories</a></li>
+      <li class="tabs col s3"><a class="" href="#pending_categories">Pending Categories</a></li>
+    </ul>
   </div>
-  </div>
+  <div id="active_categories" class="col s12">
+    <table class="bordered responsive-table">
+      <thead>
+        <tr>
+          <th data-field="id">Sn</th>
+          <th data-field="id">Name</th>
+          <th data-field="name">Edit</th>
+          <th data-field="price">Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        @foreach($categories as $category)
+        <tr>
+          <td>{{ $category->id }}</td>
+          <td>{{ $category->name }}</td>
+          <td>
+           <span>
+            <a href="/dashboard/category/edit/{{ $category->id }}" title="{{ $category->name }}" id="{{ $category->id }}">Edit <i class="fa fa-pencil" aria-hidden="true"></i> 
+            </a>
+          </span>
+        </td>
+        <td>
+         <select id="{{ $category->id }}" name="activate" class="activate">
+          <option value="" selected>Select</option>
+          <option value="0">De-activate</option>
+        </select>
+      </td>
+    </tr>
+    @endforeach
+  </tbody>
+</table>
+{!! $categories->render() !!}
+</div>
+<div id="pending_categories" class="col s12">
+  <table class="bordered responsive-table">
+    <thead>
+      <tr>
+        <th data-field="id">Sn</th>
+        <th data-field="id">Name</th>
+        <th data-field="price">Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      @foreach($pendingCategories as $category)
+      <tr>
+        <td>{{ $category->id }}</td>
+        <td>{{ $category->name }}</td>
+      <td>
+       <select id="{{ $category->id }}" name="activate" class="activate">
+        <option value="" selected>Select</option>
+        <option value="1">Activate</option>
+      </select>
+    </td>
+  </tr>
+  @endforeach
+</tbody>
+</table>
+{!! $pendingCategories->render() !!}
+</div>
+</div>
+</div>

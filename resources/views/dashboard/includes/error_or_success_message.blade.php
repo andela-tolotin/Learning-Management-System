@@ -5,6 +5,11 @@
     <strong> {{ session('status') }}</strong>
   </div>
   @endif
+  @if (session('status') == 'Oops! Category does not exist!')
+   <div class="card-panel deep-orange accent-4 danger">
+    <strong> {{ session('status') }}</strong>
+  </div>
+  @endif
   @if (session('status') == 'Sucessfully created!') 
   <div class="card-panel teal darken-4 success">
     <strong> {{ session('status') }}</strong>

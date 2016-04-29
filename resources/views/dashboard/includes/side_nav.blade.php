@@ -1,6 +1,6 @@
-<header>
+<header class="">
   <div class="container"><a href="#" data-activates="nav-mobile" class="button-collapse top-nav waves-effect waves-light circle hide-on-large-only"><i class="material-icons">menu</i></a></div>
-  <ul id="nav-mobile" class="side-nav fixed">
+  <ul id="nav-mobile" class="side-nav fixed grey lighten-4">
     <li class="logo">
       <a id="logo-container" href="#" class="brand-logo">
         <img src="{{ URL::to('/') }}/images/user.jpg" title="myprofile" alt="myprofile">
@@ -19,7 +19,7 @@
           <div class="collapsible-body">
             <ul>
               <li><a href="/dashboard/category/add">Add Category</a></li>
-              <li><a href="/dashboard/view-categories">View Category</a></li>
+              <li><a href="/dashboard/category/view">View Category</a></li>
             </ul>
           </div>
         </li>

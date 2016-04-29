@@ -1,8 +1,8 @@
-<footer class="page-footer blue darken-1" style="bottom: 0;">
+<footer class="page-footer grey darken-1" style="bottom: 0;">
     <div class="footer-copyright">
         <div class="container">
         © 2015-2016 Learncast, All rights reserved.
-        <a class="grey-text text-lighten-4 right" href="https://github.com/Dogfalo/materialize/blob/master/LICENSE">#TIA</a>
+        <a class="grey-text text-lighten-4 right" href="#">#TIA</a>
         </div>
       </div>
     </footer>
@@ -12,11 +12,15 @@
     <script src="{{ URL::asset('js/scripts.js') }}"></script>
     <script src="{{ URL::asset('js/jquery.als-1.7.min.js') }} "></script>
     <script src="{{ URL::asset('js/video_category.js') }}"></script>
+    <script src="{{ URL::asset('js/videoCategory.js') }}"></script>
+    <script src="{{ URL::asset('js/sweetalert.min.js') }}"></script>
     <script src="{{ URL::asset('js/materialize.min.js') }}"></script>
 <script>
  $(document).ready(function() {
+  $("body").videoCategoryPlugin();
   $(".button-collapse").sideNav();
   $('.collapsible').collapsible();
   $('select').material_select();
+  //$('ul.tabs').tabs('select_tab', 'tab_id');
  });
 </script>
