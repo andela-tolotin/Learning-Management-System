@@ -13,7 +13,7 @@ class Category extends Model
 
     protected $fillable  = ['name', 'description', 'user_id'];
 
-    public function video()
+    public function videos()
     {
         return $this->hasMany('App\Video');
     }
