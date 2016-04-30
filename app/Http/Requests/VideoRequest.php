@@ -27,7 +27,7 @@ class VideoRequest extends Request
            'title'        => 'required|unique:videos|max:50', 
            'url'          => 'required|unique:videos|max:50', 
            'description'  => 'required|max:160', 
-           'category_id'  => 'required|max:5',
+           'category'     => 'required|max:5',
         ];
     }
 }
