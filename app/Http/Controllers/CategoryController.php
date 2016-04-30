@@ -18,7 +18,7 @@ class CategoryController extends Controller
         $category = Category::create([
             'name'        => $request->input('name'),
             'description' => $request->input('description'),
-            'user_id'     => 1,
+            'user_id'     => 10,
             ]);
 
         if (! is_null($category)) {
@@ -49,7 +49,7 @@ class CategoryController extends Controller
         return redirect('/dashboard/category/edit'.$id)->with(
             'status', 
             'Oops! Something went wrong!'
-            );
+        );
     }
 
     public function getCategory($id)
@@ -70,7 +70,7 @@ class CategoryController extends Controller
 
     public function viewAllCategories()
     {
-        $user_id = 1;
+        $user_id = 10;
 
         $categories = Category::getCategoriesByUserId($user_id)
         ->orderBy('id', 'asc')
@@ -79,7 +79,10 @@ class CategoryController extends Controller
         $pendingCategories = Category::allTrashedCategories($user_id)
         ->paginate(10);
 
-        return view('dashboard.pages.list_video_categories', compact('categories', 'pendingCategories'));
+        return view('dashboard.pages.list_video_categories', compact(
+            'categories', 
+            'pendingCategories'
+        ));
 
     }
 
