@@ -59,19 +59,28 @@ Route::group(['prefix' => '/dashboard','middleware' => ['web']], function () {
 
     Route::get('/video/add', [
         'uses' => 'VideoController@index', 
-
     ]);
 
     Route::post('/video/create', [
         'uses' => 'VideoController@store', 
-
     ]);
 
     Route::get('/video/view', [
         'uses' => 'VideoController@viewAllVideos', 
     ]);
-});
 
+    Route::get('/video/edit/{id}',  [
+        'uses' => 'VideoController@getVideo', 
+    ]);
+
+    Route::post('/video/update/{id}',  [
+        'uses' => 'VideoController@updateVideo', 
+    ]);
+
+    Route::get('/video/delete/{id}',  [
+        'uses' => 'VideoController@changeVideoStatus', 
+    ]);
+});
 
 /*
 |--------------------------------------------------------------------------
