@@ -25,9 +25,9 @@ class VideoRequest extends Request
     {
         return [
            'title'        => 'required|unique:videos|max:50', 
-           'url'          => 'required|unique:videos|max:50', 
-           'description'  => 'required|max:160', 
+           'description'  => 'required|max:256', 
            'category'     => 'required|max:5',
+           'url'          => 'required',
         ];
     }
 }
