@@ -25,7 +25,7 @@ class CategoryRequest extends Request
     {
         return [
             'name'         => 'required|unique:categories|max:20',
-            'description'  => 'required|max:160',
+            'description'  => 'required|max:256',
         ];
     }
 }
