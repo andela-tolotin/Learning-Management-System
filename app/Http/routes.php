@@ -36,14 +36,6 @@ Route::group(['prefix' => '/dashboard','middleware' => ['web']], function () {
         'uses' => 'CategoryController@viewAllCategories', 
     ]);
 
-    Route::get('/add-video', function () {
-        return view('dashboard.pages.add_video');
-    });
-
-    Route::get('/view-videos', function () {
-        return view('dashboard.pages.list_all_videos');
-    });
-
     Route::get('/profile', function () {
         return view('dashboard.pages.view_myprofile');
     });
@@ -63,6 +55,19 @@ Route::group(['prefix' => '/dashboard','middleware' => ['web']], function () {
 
     Route::get('/category/delete/{id}',  [
         'uses' => 'CategoryController@changeCategoryStatus', 
+    ]);
+
+     Route::get('/video/add', function () {
+        return view('dashboard.pages.add_video');
+    });
+
+    Route::get('/video/view', function () {
+        return view('dashboard.pages.list_all_videos');
+    });
+
+    Route::post('/video/create', [
+        'uses' => 'VideoController@store', 
+
     ]);
 
 });
