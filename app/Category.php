@@ -15,7 +15,7 @@ class Category extends Model
 
     public function video()
     {
-        return $this->hasOne('App\Video');
+        return $this->hasMany('App\Video');
     }
 
     public function scopeGetCategoriesByUserId($query, $id)
