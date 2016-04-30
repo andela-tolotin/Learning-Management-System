@@ -57,19 +57,19 @@ Route::group(['prefix' => '/dashboard','middleware' => ['web']], function () {
         'uses' => 'CategoryController@changeCategoryStatus', 
     ]);
 
-     Route::get('/video/add', function () {
-        return view('dashboard.pages.add_video');
-    });
+    Route::get('/video/add', [
+        'uses' => 'VideoController@index', 
 
-    Route::get('/video/view', function () {
-        return view('dashboard.pages.list_all_videos');
-    });
+    ]);
 
     Route::post('/video/create', [
         'uses' => 'VideoController@store', 
 
     ]);
 
+    Route::get('/video/view', [
+        'uses' => 'VideoController@viewAllVideos', 
+    ]);
 });
 
 
