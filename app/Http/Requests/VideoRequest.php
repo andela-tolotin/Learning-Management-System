@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
 
-class CategoryRequest extends Request
+class VideoRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,8 +24,10 @@ class CategoryRequest extends Request
     public function rules()
     {
         return [
-            'name'         => 'required|unique:categories|max:20',
-            'description'  => 'required|max:256',
+           'title'        => 'required|unique:videos|max:50', 
+           'description'  => 'required|max:256', 
+           'category'     => 'required|max:5',
+           'url'          => 'required',
         ];
     }
 }

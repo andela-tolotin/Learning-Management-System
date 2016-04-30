@@ -13,11 +13,13 @@
     <script src="{{ URL::asset('js/jquery.als-1.7.min.js') }} "></script>
     <script src="{{ URL::asset('js/video_category.js') }}"></script>
     <script src="{{ URL::asset('js/videoCategory.js') }}"></script>
+    <script src="{{ URL::asset('js/Video.js') }}"></script>
     <script src="{{ URL::asset('js/sweetalert.min.js') }}"></script>
     <script src="{{ URL::asset('js/materialize.min.js') }}"></script>
 <script>
  $(document).ready(function() {
   $("body").videoCategoryPlugin();
+  $("body").videoPlugin();
   $(".button-collapse").sideNav();
   $('.collapsible').collapsible();
   $('select').material_select();

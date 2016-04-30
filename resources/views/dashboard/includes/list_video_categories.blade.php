@@ -17,9 +17,10 @@
         </tr>
       </thead>
       <tbody>
+      <?php $sn = 1; ?>
         @foreach($categories as $category)
         <tr>
-          <td>{{ $category->id }}</td>
+          <td>{{ $sn }}</td>
           <td>{{ $category->name }}</td>
           <td>
            <span>
@@ -34,6 +35,7 @@
         </select>
       </td>
     </tr>
+    <?php $sn++; ?>
     @endforeach
   </tbody>
 </table>
@@ -49,19 +51,21 @@
       </tr>
     </thead>
     <tbody>
+    <?php $sn = 1; ?>
       @foreach($pendingCategories as $category)
       <tr>
-        <td>{{ $category->id }}</td>
+        <td>{{ $sn }}</td>
         <td>{{ $category->name }}</td>
-      <td>
-       <select id="{{ $category->id }}" name="activate" class="activate">
-        <option value="" selected>Select</option>
-        <option value="1">Activate</option>
-      </select>
-    </td>
-  </tr>
-  @endforeach
-</tbody>
+        <td>
+         <select id="{{ $category->id }}" name="activate" class="activate">
+          <option value="" selected>Select</option>
+          <option value="1">Activate</option>
+        </select>
+      </td>
+    </tr>
+    <?php $sn++; ?>
+    @endforeach
+  </tbody>
 </table>
 {!! $pendingCategories->render() !!}
 </div>

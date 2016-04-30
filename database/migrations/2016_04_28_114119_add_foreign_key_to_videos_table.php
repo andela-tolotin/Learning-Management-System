@@ -15,7 +15,9 @@ class AddForeignKeyToVideosTable extends Migration
         Schema::table('videos', function (Blueprint $table) {
             $table->softDeletes();
             $table->integer('category_id')->unsigned();
-            $table->foreign('category_id')->references('id')->on('videos');
+            $table->foreign('category_id')->references('id')->on('categories');
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

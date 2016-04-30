@@ -13,9 +13,9 @@ class Category extends Model
 
     protected $fillable  = ['name', 'description', 'user_id'];
 
-    public function video()
+    public function videos()
     {
-        return $this->hasOne('App\Video');
+        return $this->hasMany('App\Video');
     }
 
     public function scopeGetCategoriesByUserId($query, $id)

@@ -27,8 +27,8 @@
           <i class="material-icons">note_add</i></a>
           <div class="collapsible-body">
             <ul>
-              <li><a href="/dashboard/add-video">Add video </a></li>
-              <li><a href="/dashboard/view-videos">View Videos</a></li>
+              <li><a href="/dashboard/video/add">Add video </a></li>
+              <li><a href="/dashboard/video/view">View Videos</a></li>
             </ul>
           </div>
         </li>
