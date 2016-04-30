@@ -14,7 +14,7 @@ class AddUserIdToVideoCategory extends Migration
     {
         Schema::table('categories', function (Blueprint $table) {
             $table->integer('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('categories');
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
