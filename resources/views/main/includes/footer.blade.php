@@ -29,16 +29,8 @@
                     <input type="password" class="form-control input-lg" placeholder="Password" name="password" id="password">
                 </div>
                 <div class="preloader-wrapper small active">
-                <div class="spinner-layer spinner-blue-only">
-                      <div class="circle-clipper left">
-                        <div class="circle"></div>
-                    </div><div class="gap-patch">
-                    <div class="circle"></div>
-                </div><div class="circle-clipper right">
-                <div class="circle"></div>
-            </div>
-        </div>
-    </div>
+                    <img src="{{ URL::to('/') }}/images/preloader.gif" title="preloader" alt="preloader">
+                </div>
     <div class="form-group">
         <button class="btn btn-danger btn-lg btn-block" id="signup">Sign up</button>
         <span class="pull-right"><a href="/login">Log In</a></span>
