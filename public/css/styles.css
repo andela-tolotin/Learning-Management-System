@@ -312,4 +312,8 @@ footer .nav>li>a:hover {
 .noerror::-webkit-input-placeholder {
     color: #cccccc
 }
+.preloader-wrapper {
+  width: 20%;
+  height: auto;
+}
 
