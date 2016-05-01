@@ -1,4 +1,3 @@
-
 <div class="container v-center bounceInDown animated bg-white">
        <div class="row">
          <div class="col-lg-3">
