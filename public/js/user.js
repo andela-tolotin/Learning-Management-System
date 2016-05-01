@@ -45,9 +45,10 @@
                         .done(function(response) {
                             $(".preloader-wrapper").hide();
                             if (response.statuscode === 200) {
+                                reporter.html(response.message).css('color', 'green')
                                 window.location.href = '/dashboard'
                             }
-                            reporter.html(response.message).css('color', 'green')
+                            reporter.html(response.message).css('color', 'red')
 
                         });
                     } else {
