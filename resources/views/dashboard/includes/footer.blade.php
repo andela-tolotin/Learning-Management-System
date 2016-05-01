@@ -23,6 +23,5 @@
   $(".button-collapse").sideNav();
   $('.collapsible').collapsible();
   $('select').material_select();
-  //$('ul.tabs').tabs('select_tab', 'tab_id');
  });
 </script>
