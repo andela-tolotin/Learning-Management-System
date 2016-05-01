@@ -47,7 +47,7 @@
                             if (response.statuscode === 200) {
                                 window.location.href = '/dashboard'
                             }
-                            reporter.html(response.message).css('color', '#A00')
+                            reporter.html(response.message).css('color', 'green')
 
                         });
                     } else {
