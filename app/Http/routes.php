@@ -11,16 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Route::get('/welcome', function () {
     return view('main.pages.single_video');
-});
-
-Route::get('/login', function () {
-    return view('main.pages.auth.userlogin_form');
 });
 
 Route::group(['prefix' => '/dashboard','middleware' => ['web']], function () {
@@ -42,7 +34,6 @@ Route::group(['prefix' => '/dashboard','middleware' => ['web']], function () {
 
     Route::post('/category/create', [
         'uses' => 'CategoryController@store', 
-
     ]);
 
     Route::get('/category/edit/{id}',  [
@@ -96,4 +87,11 @@ Route::group(['prefix' => '/dashboard','middleware' => ['web']], function () {
 Route::group(['middleware' => ['web']], function () {
     Route::get('auth/github', 'Auth\AuthController@redirectToProvider');
     Route::get('auth/github/callback', 'Auth\AuthController@handleProviderCallback');
+    Route::post('auth/register', 'Auth\AuthController@postRegister');
+    Route::get('/login', function () {
+        return view('main.pages.auth.userlogin_form');
+    });
+    Route::get('/', function () {
+        return view('welcome');
+    });
 });
