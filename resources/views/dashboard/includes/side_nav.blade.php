@@ -8,7 +8,7 @@
     </li>
     <li class="search">
       <div class="search-wrapper card">
-        <input id="search" spellcheck="false" ginger_software_editor="true" class="GINGER_SOFTWARE_control" style="position: relative; font-size: 16px; white-space: pre-wrap; background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAAAtCAYAAAAUVlZkAAABYklEQVR4Xu3UAQkAAAwCwdm/9HI83BLITdw5AgQIRAQWySkmAQIEzmApAQECGQGDlXmVoAQIGCwdIEAgI2CwMq8SlAABg6UDBAhkBAxW5lWCEiBgsHSAAIGMgMHKvEpQAgQMlg4QIJARMFiZVwlKgIDB0gECBDICBivzKkEJEDBYOkCAQEbAYGVeJSgBAgZLBwgQyAgYrMyrBCVAwGDpAAECGQGDlXmVoAQIGCwdIEAgI2CwMq8SlAABg6UDBAhkBAxW5lWCEiBgsHSAAIGMgMHKvEpQAgQMlg4QIJARMFiZVwlKgIDB0gECBDICBivzKkEJEDBYOkCAQEbAYGVeJSgBAgZLBwgQyAgYrMyrBCVAwGDpAAECGQGDlXmVoAQIGCwdIEAgI2CwMq8SlAABg6UDBAhkBAxW5lWCEiBgsHSAAIGMgMHKvEpQAgQMlg4QIJARMFiZVwlKgIDB0gECBDICD8vVAC7n0gpLAAAAAElFTkSuQmCC&quot;) !important; background-attachment: local !important; background-position: 15px 23px !important; background-repeat: no-repeat !important;"><i class="material-icons">search</i>
+        <input id="search" spellcheck="false" ginger_software_editor="true" class="" style=""><i class="material-icons">search</i>
         <div class="search-results"></div>
       </div>
     </li>
