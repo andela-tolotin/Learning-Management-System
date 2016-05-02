@@ -81,6 +81,10 @@ Route::group(['prefix' => '/dashboard','middleware' => ['web','auth']], function
         'uses' => 'UserController@updateProfile', 
     ]);
 
+    Route::post('/profile/picture/update',  [
+        'uses' => 'UserController@updateAvatar', 
+    ]);
+
 });
 
 /*
