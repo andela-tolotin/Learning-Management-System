@@ -76,6 +76,11 @@ Route::group(['prefix' => '/dashboard','middleware' => ['web','auth']], function
     Route::get('/video/delete/{id}',  [
         'uses' => 'VideoController@changeVideoStatus', 
     ]);
+
+    Route::get('/profile/update',  [
+        'uses' => 'UserController@updateProfile', 
+    ]);
+
 });
 
 /*

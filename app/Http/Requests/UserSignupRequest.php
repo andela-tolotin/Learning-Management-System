@@ -24,9 +24,8 @@ class UserSignupRequest extends Request
     public function rules()
     {
         return [
-            'username'  => 'required|unique:users|max:20',
-            'email'     => 'required|unique:users|max:50',
-            'password'  => 'required|min:6',
+            'username'  => 'unique:users|max:20',
+            'email'     => 'unique:users|max:50',
         ];
     }
 }
