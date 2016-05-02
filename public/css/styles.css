@@ -274,21 +274,46 @@ footer .nav>li>a:hover {
   width: auto;
   min-height: 100px;
 }
+
 .fa-heart-o {
   color: #A00;
 }
+
 .bg-white {
   background: white;
 }
+
 .video_frame {
    padding-top: 2%;
 }
+
 .related_videos_wrapper {
   margin-top: -20px;
 }
+
 .related_videos_wrapper h3 {
   padding: 2%;
 }
+
 .login_form {
   margin-top: 15%;
 }
+
+.wrapper {
+  width: 90%;
+  clear: both;
+  margin: auto;
+}
+
+.error::-webkit-input-placeholder {
+    color: #A00
+}
+
+.noerror::-webkit-input-placeholder {
+    color: #cccccc
+}
+.preloader-wrapper img {
+  width: 60px;
+  height: auto;
+}
+

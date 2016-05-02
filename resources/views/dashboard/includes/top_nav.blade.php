@@ -1,9 +1,8 @@
 <nav class="light-blue darken-1">
-  <!-- === NavBar Fixed Right Side === -->
   <ul class="right">
     <li>
        <a class="dropdown-button" href="#" data-activates="d2">
-         Laztopaz <i class="fa fa-chevron-down" aria-hidden="true"></i>
+        {{ ucwords(Auth::user()->username) }} <i class="fa fa-chevron-down" aria-hidden="true"></i>
        </a>
       <ul id='d2' class='dropdown-content'>
         <li><a href="/dashboard/profile">Profile </a></li>

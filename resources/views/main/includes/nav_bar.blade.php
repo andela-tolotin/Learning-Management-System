@@ -10,12 +10,40 @@
             <a class="navbar-brand text-default" href="/">Learncast</a>
         </div>
         <div class="navbar-collapse collapse" id="navbar-collapsible">
+            @if (Auth::check())
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="/">Home</a></li>
-                <li><a href="/about">About</a></li>
-                <li><a href="/login">Login</a></li>
-                <li>&nbsp;</li>
-            </ul>
-        </div>
-    </div>
+                <!-- Authentication Links -->
+                <li id="user-avatar">
+                <a href="dashboard/profile">
+                  <img src="https://en.gravatar.com/userimage/102347280/b3e9c138c1548147b7ff3f9a2a1d9bb0.png?size=30" class="img-circle">
+              </a>
+          </li>
+          <li class="dropdown">
+             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+              {{ ucwords(Auth::user()->username) }}<span class="caret"></span>
+          </a>
+
+          <ul class="dropdown-menu" role="menu">
+            <li>
+                <a href="/dashboard/profile">
+                    <i class="fa fa-btn fa-user"></i> {{ ucwords(Auth::user()->username) }}'s profile
+                </a>
+            </li>
+            <li role="separator" class="divider"></li>
+            <li><a href="/dashboard"><i class="fa fa-btn fa-dashboard"></i> Dashboard</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="/dashboard/logout"><i class="fa fa-btn fa-power-off"></i> Logout</a></li>
+        </ul>
+    </li>
+</ul>
+@else 
+<ul class="nav navbar-nav navbar-right">
+    <li><a href="/">Home</a></li>
+    <li><a href="/about">About</a></li>
+    <li><a href="/login">Login</a></li>
+    <li>&nbsp;</li>
+</ul>
+@endif
+</div>
+</div>
 </nav>

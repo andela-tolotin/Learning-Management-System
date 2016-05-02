@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
+use Auth;
 use App\Category;
 use App\Http\Requests;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CategoryRequest;
 use Illuminate\Support\Facades\Response;
@@ -18,7 +18,7 @@ class CategoryController extends Controller
         $category = Category::create([
             'name'        => $request->input('name'),
             'description' => $request->input('description'),
-            'user_id'     => 10,
+            'user_id'     => Auth::user()->id,
             ]);
 
         if (! is_null($category)) {
@@ -70,7 +70,7 @@ class CategoryController extends Controller
 
     public function viewAllCategories()
     {
-        $user_id = 10;
+        $user_id = Auth::user()->id;
 
         $categories = Category::getCategoriesByUserId($user_id)
         ->orderBy('id', 'asc')
