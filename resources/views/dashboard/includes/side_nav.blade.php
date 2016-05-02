@@ -1,13 +1,38 @@
-<nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800">
-<a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">home</i>Home</a>
-<a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">inbox</i>Inbox</a>
-<a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">delete</i>Trash</a>
-<a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">report</i>Spam</a>
-<a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">forum</i>Forums</a>
-<a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">flag</i>Updates</a>
-<a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">local_offer</i>Promos</a>
-<a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">shopping_cart</i>Purchases</a>
-<a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">people</i>Social</a>
-<div class="mdl-layout-spacer"></div>
-<a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">help_outline</i><span class="visuallyhidden">Help</span></a>
-</nav>
+<header class="">
+  <div class="container"><a href="#" data-activates="nav-mobile" class="button-collapse top-nav waves-effect waves-light circle hide-on-large-only"><i class="material-icons">menu</i></a></div>
+  <ul id="nav-mobile" class="side-nav fixed grey lighten-4">
+    <li class="logo">
+      <a id="logo-container" href="#" class="brand-logo">
+        <img src="{{ URL::to('/') }}/images/user.jpg" title="myprofile" alt="myprofile">
+      </a>
+    </li>
+    <li class="search">
+      <div class="search-wrapper card">
+        <input id="search" spellcheck="false" ginger_software_editor="true" class="" style=""><i class="material-icons">search</i>
+        <div class="search-results"></div>
+      </div>
+    </li>
+    <li class="bold"><a href="/dashboard" class="waves-effect waves-teal"><i class="material-icons"></i> Home</a></li>
+    <li class="no-padding">
+      <ul class="collapsible collapsible-accordion">
+        <li class="bold"><a class="collapsible-header  waves-effect waves-teal">Video Category <i class="material-icons">video_library</i></a>
+          <div class="collapsible-body">
+            <ul>
+              <li><a href="/dashboard/category/add">Add Category</a></li>
+              <li><a href="/dashboard/category/view">View Category</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="bold"><a class="collapsible-header  waves-effect waves-teal">Courseware 
+          <i class="material-icons">note_add</i></a>
+          <div class="collapsible-body">
+            <ul>
+              <li><a href="/dashboard/video/add">Add video </a></li>
+              <li><a href="/dashboard/video/view">View Videos</a></li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</header>

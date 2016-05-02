@@ -1,6 +1,8 @@
 
- <div id="lista1" class="als-container">
-  <span class="als-prev"><img src="images/thin_left_arrow_333.png" alt="prev" title="previous" /></span>
+ <div id="lista1" class="als-container slideInLeft animated">
+  <span class="als-prev"><img src="images/thin_left_arrow_333.png" alt="prev" title="previous" />
+  <!-- <img src="images/thin_right_arrow_333.png" alt="next" title="next" /> -->
+  </span>
         <div class="als-viewport">
           <ul class="als-wrapper">
             <li class="als-item"><p class="img-circle">calculator</p></li>

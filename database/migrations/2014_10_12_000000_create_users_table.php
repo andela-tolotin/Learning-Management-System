@@ -16,9 +16,12 @@ class CreateUsersTable extends Migration
             $table->increments('id');
             $table->string('username');
             $table->string('email')->unique();
+            $table->text('profile_bio');
+            $table->text('picture_url');
             $table->string('password', 60);
             $table->rememberToken();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

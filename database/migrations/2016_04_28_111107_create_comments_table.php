@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddExcerptToArticlesTable extends Migration
+class CreateCommentsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,9 +12,10 @@ class AddExcerptToArticlesTable extends Migration
      */
     public function up()
     {
-        Schema::table('articles', function (Blueprint $table) {
-
-			$table->text("excerpt")->nullable();
+        Schema::create('comments', function (Blueprint $table) {
+            $table->increments('id')->unsigned();
+            $table->text('comment');
+            $table->timestamps();
         });
     }
 
@@ -25,10 +26,6 @@ class AddExcerptToArticlesTable extends Migration
      */
     public function down()
     {
-        Schema::table('articles', function (Blueprint $table) {
-
-			$table->dropColumn('excerpt');
-        });
+        Schema::drop('comments');
     }
 }
-
