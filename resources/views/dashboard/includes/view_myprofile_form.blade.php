@@ -26,20 +26,20 @@
      </div>
    </form>
  </div>
-<div class="col s4">
- <form class="form" method="POST" action="/dashboard/profile/picture/update" enctype="multipart/form-data">
-   {{ csrf_field() }}
+ <div class="col s4">
+   <form class="form" method="POST" action="/dashboard/picture/update" enctype="multipart/form-data">
+     {{ csrf_field() }}
+     <div class="input-field col s10">
+      <img src="{{ Auth::user()->picture_url }}" title="myprofile" alt="myprofile" class="img-circle">
+    </div>
+    <div class="input-field col s10">
+     <input id="picture_url" type="file" class="validate" name="picture_url">
+   </div>
    <div class="input-field col s10">
-    <img src="{{ Auth::user()->picture_url }}" title="myprofile" alt="myprofile" class="img-circle">
-  </div>
-  <div class="input-field col s10">
-   <input id="picture_url" type="file" class="validate" name="picture_url">
+    <button class="btn waves-effect waves-light" type="submit" name="action">Upload
+     <i class="material-icons right">offline_pin</i>
+   </button>
  </div>
- <div class="input-field col s10">
-  <button class="btn waves-effect waves-light" type="submit" name="action">Upload
-   <i class="material-icons right">offline_pin</i>
- </button>
-</div>
 </form>
 </div>
 </div>
