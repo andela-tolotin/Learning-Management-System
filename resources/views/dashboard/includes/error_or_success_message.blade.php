@@ -15,6 +15,11 @@
     <strong> {{ session('status') }}</strong>
   </div>
   @endif
+  @if (session('status') == 'Sucessfully updated!') 
+  <div class="card-panel teal darken-4 success">
+    <strong> {{ session('status') }}</strong>
+  </div>
+  @endif
   @if (count($errors) > 0)
   <!-- Form Error List -->
   <div class="card-panel deep-orange accent-4 danger">
