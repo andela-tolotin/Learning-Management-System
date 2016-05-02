@@ -27,7 +27,7 @@
    </form>
  </div>
 <div class="col s4">
- <form class="form" method="POST" action="/dashboard/profile/picture/update">
+ <form class="form" method="POST" action="/dashboard/profile/picture/update" enctype="multipart/form-data">
    {{ csrf_field() }}
    <div class="input-field col s10">
     <img src="{{ Auth::user()->picture_url }}" title="myprofile" alt="myprofile" class="img-circle">
