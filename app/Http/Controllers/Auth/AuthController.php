@@ -7,8 +7,9 @@ use App\User;
 use Validator;
 use Socialite;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use App\Http\Requests\UserRequest;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\UserSignupRequest;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 
@@ -41,7 +42,7 @@ class AuthController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest', ['except' => 'logUserOut']);
+        $this->middleware('guest', ['except' => ['logUserOut', 'postRegister']]);
     }
 
     /**
@@ -76,7 +77,7 @@ class AuthController extends Controller
         ]);
     }
 
-    public function postRegister(Request $request)
+    public function postRegister(UserSignupRequest $request)
     {
         $username = $request->input('username');
         $email = $request->input('email');
@@ -86,10 +87,7 @@ class AuthController extends Controller
         ->first();
 
         if (! is_null($user)) {
-            return [
-               'statuscode' => 400,
-               'message'  => 'User already exist'
-            ];
+            return ['statuscode' => 400,'message'  => 'User already exist', ];
         }
 
         $user = $this->create($request->all());
@@ -97,10 +95,7 @@ class AuthController extends Controller
         if (! is_null($user)) {
             Auth::attempt($request->only(['username', 'password']));
 
-            return [
-               'statuscode' => 200,
-               'message'  => 'User created successful',
-               ];
+            return ['statuscode' => 200,'message'  => 'User created successful',];
         }
     }
 
