@@ -77,7 +77,7 @@ Route::group(['prefix' => '/dashboard','middleware' => ['web','auth']], function
         'uses' => 'VideoController@changeVideoStatus', 
     ]);
 
-    Route::get('/profile/update',  [
+    Route::post('/profile/update',  [
         'uses' => 'UserController@updateProfile', 
     ]);
 
