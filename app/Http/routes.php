@@ -15,10 +15,15 @@ Route::get('/welcome', function () {
     return view('main.pages.single_video');
 });
 
-Route::group(['prefix' => '/dashboard','middleware' => ['web']], function () {
+Route::group(['prefix' => '/dashboard','middleware' => ['web','auth']], function () {
+
+    Route::auth();
+
     Route::get('/', function () {
         return view('dashboard.index');
     });
+
+    Route::get('/logout', 'Auth\AuthController@logUserOut');
 
     Route::get('/category/add', function () {
         return view('dashboard.pages.video_category');
@@ -84,14 +89,19 @@ Route::group(['prefix' => '/dashboard','middleware' => ['web']], function () {
 |
 */
 
+Route::group(['prefix' => '/auth', 'middleware' => ['web']], function () {
+    Route::get('/github', 'Auth\AuthController@redirectToProvider');
+    Route::get('/github/callback', 'Auth\AuthController@handleProviderCallback');
+    Route::post('/register', 'Auth\AuthController@postRegister');
+    Route::post('/login', 'Auth\AuthController@loginUser');
+});
+
 Route::group(['middleware' => ['web']], function () {
-    Route::get('auth/github', 'Auth\AuthController@redirectToProvider');
-    Route::get('auth/github/callback', 'Auth\AuthController@handleProviderCallback');
-    Route::post('auth/register', 'Auth\AuthController@postRegister');
-    Route::get('/login', function () {
-        return view('main.pages.auth.userlogin_form');
-    });
     Route::get('/', function () {
         return view('welcome');
+    });
+
+    Route::get('/login', function () {
+        return view('main.pages.auth.userlogin_form');
     });
 });
