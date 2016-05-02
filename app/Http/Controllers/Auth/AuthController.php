@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers\Auth;
 
-
+use Auth;
 use App\User;
 use Validator;
 use Socialite;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\UserRequest;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 
@@ -40,7 +41,7 @@ class AuthController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest', ['except' => 'logout']);
+        $this->middleware('guest', ['except' => 'logUserOut']);
     }
 
     /**
@@ -53,7 +54,6 @@ class AuthController extends Controller
     {
         return Validator::make($data, [
             'username' => 'required|max:255',
-            'email' => 'required|email|max:255|unique:users',
             'password' => 'required|confirmed|min:6',
         ]);
     }
@@ -92,13 +92,53 @@ class AuthController extends Controller
             ];
         }
 
-        $this->create($request->all());
+        $user = $this->create($request->all());
 
-        return [
+        if (! is_null($user)) {
+            Auth::attempt($request->only(['username', 'password']));
+
+            return [
                'statuscode' => 200,
-               'message'  => 'User created successful'
-        ];
+               'message'  => 'User created successful',
+               ];
+        }
+    }
 
+    /**
+     * This method logs in user
+     * 
+     * @param  UserRequest $request
+     * 
+     * @return redirect
+     */
+    public function loginUser(UserRequest $request)
+    {
+         $status = Auth::attempt($request->only(['username', 'password']));
+
+         if (! $status) {
+            return redirect('/login')->with(
+                'status', 
+                'Oops! Login attempt failed!'
+            );
+         }
+
+        return redirect('/')->with(
+                'status', 
+                'Sucessfully logged in!'
+        );
+
+    }
+
+    /**
+     * This method logs out user
+     * 
+     * @return redirect
+     */
+    public function logUserOut()
+    {
+         Auth::logout();
+
+        return redirect('/');
     }
 
     /**
@@ -119,7 +159,5 @@ class AuthController extends Controller
     public function handleProviderCallback()
     {
         $user = Socialite::driver('github')->user();
-
-        // $user->token;
     }
 }

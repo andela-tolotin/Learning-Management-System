@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
+use Auth;
 use App\Video;
 use App\Category;
 use App\Http\Requests;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\VideoRequest;
 use Illuminate\Support\Facades\Response;
@@ -23,7 +23,7 @@ class VideoController extends Controller
 
     public function store(VideoRequest $request)
     {
-        $user_id = 10;
+        $user_id = Auth::user()->id;
 
         $category = Video::create([
             'title'        => $request->input('title'),
@@ -48,7 +48,7 @@ class VideoController extends Controller
 
     public function viewAllVideos()
     {
-        $user_id = 10;
+        $user_id = $user_id = Auth::user()->id;;
 
         $videos = Video::with('category')
         ->getVideosByUserId($user_id)
