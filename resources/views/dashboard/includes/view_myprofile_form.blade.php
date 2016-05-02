@@ -1,6 +1,7 @@
 <div class="card-panel hoverable">
  @include('dashboard.includes.error_or_success_message')
  <form class="form" method="POST" action="/dashboard/profile/update">
+ {{ csrf_field() }}
   <div class="row">
    <div class="col s8">
      <div class="input-field col s10">
