@@ -1,22 +1,22 @@
 <div class="card-panel hoverable">
- @include('dashboard.includes.error_or_success_message')
  <form class="form" method="POST" action="/dashboard/profile/update">
- {{ csrf_field() }}
+    {{ csrf_field() }}
   <div class="row">
    <div class="col s8">
      <div class="input-field col s10">
-      <input id="username" type="text" class="validate" value="{{ Auth::user()->username }}">
+     @include('dashboard.includes.error_or_success_message')
+      <input id="username" type="text" class="validate" value="{{ Auth::user()->username }}" name="username">
       <label for="username">Username</label>
     </div>
 
     <div class="input-field col s10">
-      <input id="email" type="email" class="validate" value="{{ Auth::user()->email }}">
+      <input id="email" type="email" class="validate" value="{{ Auth::user()->email }}" name="email">
       <label for="email">Email</label>
     </div>
 
     <div class="input-field col s10">
       <textarea id="description" class="materialize-textarea" name="profile_bio">{{ Auth::user()->profile_bio }}</textarea>
-      <label for="description">Biodata</label>
+      <label for="description">Background Information</label>
     </div>
 
     <div class="input-field col s10">
