@@ -60,9 +60,7 @@ class UserController extends Controller
 
          if (filter_var($imageUrl, FILTER_VALIDATE_URL)) {
             $user = User::where('id', '=', Auth::user()->id)
-            ->update([
-                'picture_url'    => $request->input('picture_url'),
-            ]);
+            ->update(['picture_url' => $imageUrl,]);
 
             return redirect('/dashboard/profile')
             ->with('status', 'Profile picture update successfully!');
