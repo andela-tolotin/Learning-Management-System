@@ -46,7 +46,7 @@
                             $(".preloader-wrapper").hide();
                             if (response.statuscode === 200) {
                                 reporter.html(response.message).css('color', 'green')
-                                window.location.href = '/dashboard'
+                                window.location.href = '/'
                             }
                             reporter.html(response.message).css('color', 'red')
 
