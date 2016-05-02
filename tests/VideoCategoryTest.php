@@ -10,8 +10,10 @@ class VideoCategoryTest extends TestCase
 
     public function testVideoCategoryWasVisited()
     {
-        $this->visit('/dashboard/category/add')
-             ->see('/dashboard/category/create');
+      $user = factory('App\User')->create();
+
+      $this->actingAs($user)->visit('/dashboard/category/add')
+       ->see('/dashboard/category/create');
     }
 
     public function testThatVideoCategoryWasAddedEalier()
@@ -24,7 +26,7 @@ class VideoCategoryTest extends TestCase
             'user_id'     => $user->id,
             ]);
 
-        $this->visit('/dashboard/category/add')
+        $this->actingAs($user)->visit('/dashboard/category/add')
              ->type('Javascript', 'name')
              ->type('It is the language of the web', 'description')
              ->press('Create')
@@ -42,7 +44,7 @@ class VideoCategoryTest extends TestCase
             'user_id'     => $user->id,
             ]);
 
-        $this->visit('/dashboard/category/add')
+        $this->actingAs($user)->visit('/dashboard/category/add')
              ->type('Python2', 'name')
              ->type('Python is a widely used high-level, general-purpose, interpreted, dynamic programming language.', 'description')
              ->press('Create')
@@ -60,7 +62,7 @@ class VideoCategoryTest extends TestCase
             'user_id'     => $user->id,
         ]);
 
-        $this->visit('/dashboard/category/add')
+        $this->actingAs($user)->visit('/dashboard/category/add')
              ->type('Python is a widely used high-level language.', 'description')
              ->press('Create')
              ->see('The name field is required.');
@@ -76,7 +78,7 @@ class VideoCategoryTest extends TestCase
             'user_id'     => $user->id,
         ]);
 
-        $this->visit('/dashboard/category/add')
+        $this->actingAs($user)->visit('/dashboard/category/add')
              ->type('Java', 'name')
              ->press('Create')
              ->see('The description field is required.');
@@ -93,7 +95,7 @@ class VideoCategoryTest extends TestCase
             'user_id'     => $user->id,
         ]);
 
-        $this->visit('/dashboard/category/add')
+        $this->actingAs($user)->visit('/dashboard/category/add')
              ->press('Create')
              ->see('The name field is required.')
              ->see('The description field is required.');
@@ -109,7 +111,7 @@ class VideoCategoryTest extends TestCase
             'user_id'     => $user->id,
         ]);
 
-       $this->visit('/dashboard/category/edit/'.$category->id)
+       $this->actingAs($user)->visit('/dashboard/category/edit/'.$category->id)
           ->type('Javascript 2.0', 'name')
           ->type('It is the language of the Html', 'description')
           ->press('Update')
@@ -127,7 +129,7 @@ class VideoCategoryTest extends TestCase
             'user_id'     => $user->id,
         ]);
 
-        $this->visit('/dashboard/category/edit/'.$category->id)
+        $this->actingAs($user)->visit('/dashboard/category/edit/'.$category->id)
          ->see($category->name);
     }
 
@@ -141,12 +143,13 @@ class VideoCategoryTest extends TestCase
             'user_id'     => $user->id,
         ]);
 
-        $this->visit('/dashboard/category/view')
-        ->see($categories->first()->name);
-        $this->assertArrayHasKey('id', $categories->first()->toArray());
-        $this->assertArrayHasKey('name', $categories->first()->toArray());
-        $this->assertArrayHasKey('description', $categories->first()->toArray());
-        $this->assertArrayHasKey('user_id', $categories->first()->toArray());
+        $this->actingAs($user)->visit('/dashboard/category/view')
+        ->see($categories->name);
+
+        $this->assertArrayHasKey('id', $categories->toArray());
+        $this->assertArrayHasKey('name', $categories->toArray());
+        $this->assertArrayHasKey('description', $categories->toArray());
+        $this->assertArrayHasKey('user_id', $categories->toArray());
     }
 
     public function testchangeCategoryStatus()
@@ -159,7 +162,7 @@ class VideoCategoryTest extends TestCase
             'user_id'     => $user->id,
         ]);
 
-       $this->visit('/dashboard/category/delete/1')
+       $this->actingAs($user)->visit('/dashboard/category/delete/1')
        ->see('Operation Successfully');
         
     }

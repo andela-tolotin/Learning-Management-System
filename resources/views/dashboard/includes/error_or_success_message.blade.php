@@ -10,7 +10,22 @@
     <strong> {{ session('status') }}</strong>
   </div>
   @endif
+  @if (session('status') == 'File accepted must be a jpg and not more 10MB!')
+   <div class="card-panel deep-orange accent-4 danger">
+    <strong> {{ session('status') }}</strong>
+  </div>
+  @endif
   @if (session('status') == 'Sucessfully created!') 
+  <div class="card-panel teal darken-4 success">
+    <strong> {{ session('status') }}</strong>
+  </div>
+  @endif
+  @if (session('status') == 'Profile picture update successfully!') 
+  <div class="card-panel teal darken-4 success">
+    <strong> {{ session('status') }}</strong>
+  </div>
+  @endif
+  @if (session('status') == 'Sucessfully updated!') 
   <div class="card-panel teal darken-4 success">
     <strong> {{ session('status') }}</strong>
   </div>
