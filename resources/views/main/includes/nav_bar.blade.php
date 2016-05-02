@@ -15,7 +15,7 @@
                 <!-- Authentication Links -->
                 <li id="user-avatar">
                 <a href="dashboard/profile">
-                  <img src="https://en.gravatar.com/userimage/102347280/b3e9c138c1548147b7ff3f9a2a1d9bb0.png?size=30" class="img-circle">
+                  <img src="{{ Auth::user()->picture_url }}" class="img-circle" height="30">
               </a>
           </li>
           <li class="dropdown">

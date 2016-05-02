@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use Auth;
 use App\Http\Requests\Request;
 
 class UserSignupRequest extends Request
@@ -24,9 +25,9 @@ class UserSignupRequest extends Request
     public function rules()
     {
         return [
-            'username'  => 'required|unique:users|max:20',
-            'email'     => 'required|unique:users|max:50',
-            'password'  => 'required|min:6',
+            'username'  => 'required|max:20|unique:users,username,'.Auth::user()->id,
+            'email'     => 'required|email|max:50|unique:users,email,'.Auth::user()->id,
+            'profile_bio' => 'required|min:5',
         ];
     }
 }

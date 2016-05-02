@@ -77,7 +77,7 @@ class AuthController extends Controller
         ]);
     }
 
-    public function postRegister(UserSignupRequest $request)
+    public function postRegister(Request $request)
     {
         $username = $request->input('username');
         $email = $request->input('email');
