@@ -6,18 +6,20 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 class UserSignUpTest extends TestCase
 {
-    use DatabaseTransactions;
+  use DatabaseTransactions;
 
-    public function testCheckAllFieldsEmpty()
-    {
-        $user = factory('App\User')->create();
+  public function testCheckAllFieldsEmpty()
+  {
+    $this->WithoutMiddleware();
 
-           $this->visit('/')
-           ->type('lytopze', 'username')
-           ->type('lytopze@gmail.com', 'email')
-           ->type('tope0852', 'password')
-           ->press('Sign up')
-           ->see('lytopze');
-    }
+    $user = factory('App\User')->create();
+
+    $response = $this->call('/auth/register/', 
+      'POST', [
+      'username' => 'lytoz',
+      'password' => 'tope0852',
+      'email'    => 'lytopz@gmail'
+    ]);
+  }
 
 }
